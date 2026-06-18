@@ -2,501 +2,398 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>New Castle PA Rentals | Pet-Friendly Homes</title>
-  <meta name="description" content="Pet-friendly rentals in New Castle, Pennsylvania with real 24/7 customer service. Call or text 516-313-7299.">
+  <title>New Castle PA Rentals</title>
+  <meta name="description" content="Pet-friendly homes for rent in New Castle, Pennsylvania. Call or text 516-313-7299.">
   <style>
-    :root {
-      --ink: #17212b;
-      --muted: #5d6875;
-      --line: #d9e0e7;
-      --paper: #f7f9fb;
-      --white: #ffffff;
-      --green: #0c6b4f;
-      --green-dark: #084934;
-      --shadow: 0 18px 45px rgba(23, 33, 43, 0.13);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    * {
+      box-sizing: border-box;
     }
-
-    * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      color: var(--ink);
-      background: var(--paper);
-      line-height: 1.55;
+      background: #f5f7f4;
+      color: #17212b;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 20px;
+      line-height: 1.6;
     }
 
-    a { color: inherit; }
+    a {
+      color: inherit;
+    }
 
-    .topbar {
+    .top {
+      padding: 18px 6%;
+      background: #ffffff;
+      border-bottom: 1px solid #d9e0e7;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
       position: sticky;
       top: 0;
       z-index: 10;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 14px clamp(18px, 5vw, 56px);
-      background: rgba(255, 255, 255, 0.93);
-      border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(14px);
     }
 
     .brand {
+      font-size: 24px;
       font-weight: 800;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .nav-links a {
-      text-decoration: none;
     }
 
     .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 44px;
-      padding: 12px 18px;
+      display: inline-block;
+      background: #0b6b4f;
+      color: #ffffff;
+      padding: 14px 22px;
       border-radius: 8px;
-      border: 1px solid transparent;
-      background: var(--green);
-      color: var(--white);
+      font-size: 22px;
       font-weight: 800;
       text-decoration: none;
-      box-shadow: 0 10px 24px rgba(12, 107, 79, 0.18);
+      text-align: center;
     }
 
     .button:hover {
-      background: var(--green-dark);
-    }
-
-    .button.secondary {
-      background: var(--white);
-      color: var(--green);
-      border-color: rgba(12, 107, 79, 0.24);
-      box-shadow: none;
+      background: #084934;
     }
 
     .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr);
-      gap: clamp(28px, 5vw, 70px);
-      align-items: center;
-      padding: clamp(44px, 7vw, 86px) clamp(18px, 5vw, 56px);
-      background:
-        linear-gradient(135deg, rgba(12, 107, 79, 0.1), rgba(243, 178, 60, 0.12)),
-        var(--white);
+      padding: 64px 6%;
+      background: #ffffff;
     }
 
-    .eyebrow {
-      margin: 0 0 12px;
-      color: var(--green);
-      font-size: 0.82rem;
-      font-weight: 900;
-      letter-spacing: 0.08em;
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .small-title {
+      margin: 0 0 14px;
+      color: #0b6b4f;
+      font-size: 20px;
+      font-weight: 800;
       text-transform: uppercase;
-    }
-
-    h1, h2, h3 {
-      margin: 0;
-      line-height: 1.08;
+      letter-spacing: 1px;
     }
 
     h1 {
-      max-width: 780px;
-      font-size: clamp(2.35rem, 6vw, 5.15rem);
+      margin: 0;
+      max-width: 920px;
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: 1.05;
     }
 
-    h2 {
-      font-size: clamp(1.8rem, 3vw, 2.7rem);
-    }
-
-    h3 {
-      font-size: 1.25rem;
-    }
-
-    .lead {
-      max-width: 650px;
-      margin: 20px 0 0;
-      color: var(--muted);
-      font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+    .hero p {
+      max-width: 850px;
+      margin: 24px 0 0;
+      color: #3f4b57;
+      font-size: 26px;
+      line-height: 1.45;
     }
 
     .hero-actions {
       display: flex;
+      gap: 14px;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 28px;
+      margin-top: 32px;
     }
 
-    .quick-card {
-      padding: clamp(22px, 4vw, 34px);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--white);
-      box-shadow: var(--shadow);
-    }
-
-    .quick-card h2 {
-      margin-bottom: 18px;
-      font-size: clamp(1.45rem, 2vw, 2rem);
-    }
-
-    .checks {
+    .info-strip {
+      padding: 28px 6%;
+      background: #0b3d30;
+      color: #ffffff;
       display: grid;
-      gap: 12px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .info-box {
+      padding: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 8px;
+    }
+
+    .info-box strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 25px;
+    }
+
+    .info-box span {
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 20px;
+    }
+
+    .section {
+      padding: 56px 6%;
+    }
+
+    .section-header {
+      max-width: 1100px;
+      margin: 0 auto 28px;
+    }
+
+    h2 {
       margin: 0;
+      font-size: clamp(34px, 5vw, 54px);
+      line-height: 1.1;
+    }
+
+    .section-header p {
+      max-width: 800px;
+      margin: 14px 0 0;
+      color: #4d5a67;
+      font-size: 23px;
+    }
+
+    .listings {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      gap: 28px;
+    }
+
+    .listing {
+      background: #ffffff;
+      border: 1px solid #d9e0e7;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 14px 32px rgba(23, 33, 43, 0.10);
+      display: grid;
+      grid-template-columns: 44% 56%;
+    }
+
+    .listing img {
+      width: 100%;
+      height: 100%;
+      min-height: 360px;
+      object-fit: cover;
+      display: block;
+      background: #d9e0e7;
+    }
+
+    .listing-content {
+      padding: 30px;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: clamp(30px, 4vw, 42px);
+      line-height: 1.12;
+    }
+
+    .price {
+      margin: 16px 0;
+      color: #0b6b4f;
+      font-size: 38px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .price span {
+      color: #5d6875;
+      font-size: 21px;
+      font-weight: 800;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 18px 0;
       padding: 0;
       list-style: none;
     }
 
-    .checks li {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      color: var(--muted);
-    }
-
-    .checks strong {
-      color: var(--ink);
-    }
-
-    .checkmark {
-      display: inline-grid;
-      flex: 0 0 26px;
-      width: 26px;
-      height: 26px;
-      place-items: center;
-      border-radius: 50%;
-      background: rgba(12, 107, 79, 0.11);
-      color: var(--green);
-      font-weight: 900;
-    }
-
-    section {
-      padding: clamp(44px, 7vw, 82px) clamp(18px, 5vw, 56px);
-    }
-
-    .section-heading {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 24px;
-      margin-bottom: 28px;
-    }
-
-    .section-heading p {
-      max-width: 470px;
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-      background: var(--green-dark);
-      color: var(--white);
-    }
-
-    .feature {
-      padding: 22px;
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: 8px;
-    }
-
-    .feature p {
-      margin: 8px 0 0;
-      color: rgba(255, 255, 255, 0.78);
-    }
-
-    .property-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .property-card {
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--white);
-      box-shadow: 0 12px 28px rgba(23, 33, 43, 0.08);
-    }
-
-    .property-card img {
-      display: block;
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      background: linear-gradient(135deg, #dfe8ee, #f7f9fb);
-    }
-
-    .property-body {
-      padding: 20px;
-    }
-
-    .rent-price {
-      margin: 10px 0 0;
-      color: var(--green);
-      font-size: 1.35rem;
-      font-weight: 900;
-      line-height: 1.1;
-    }
-
-    .rent-price span {
-      color: var(--muted);
-      font-size: 0.9rem;
-      font-weight: 800;
-    }
-
-    .property-body p {
-      margin: 12px 0 18px;
-      color: var(--muted);
-    }
-
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 14px;
-    }
-
-    .tag {
-      padding: 6px 9px;
+    .tags li {
+      background: #e9f4ef;
+      color: #084934;
+      padding: 9px 12px;
       border-radius: 999px;
-      background: rgba(12, 107, 79, 0.09);
-      color: var(--green-dark);
-      font-size: 0.82rem;
+      font-size: 19px;
       font-weight: 800;
     }
 
-    .zillow-link {
-      color: var(--green);
-      font-weight: 900;
-      text-decoration: none;
+    .listing-content p {
+      margin: 16px 0 22px;
+      color: #3f4b57;
+      font-size: 23px;
     }
 
     .contact {
+      background: #ffffff;
+      border-top: 1px solid #d9e0e7;
+    }
+
+    .contact-card {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 36px;
+      background: #17212b;
+      color: #ffffff;
+      border-radius: 10px;
+    }
+
+    .contact-card p {
+      margin: 14px 0 26px;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 24px;
+    }
+
+    .contact-links {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(290px, 420px);
-      gap: 28px;
-      align-items: center;
-      background: var(--white);
+      gap: 14px;
     }
 
-    .contact-panel {
-      padding: clamp(22px, 4vw, 34px);
-      border-radius: 8px;
-      background: var(--ink);
-      color: var(--white);
-    }
-
-    .contact-panel p {
-      margin: 0 0 16px;
-      color: rgba(255, 255, 255, 0.78);
-    }
-
-    .contact-list {
-      display: grid;
-      gap: 12px;
-      margin-top: 20px;
-    }
-
-    .contact-list a {
-      color: var(--white);
-      font-size: 1.12rem;
+    .contact-links a {
+      color: #ffffff;
+      font-size: 27px;
       font-weight: 900;
       text-decoration: none;
     }
 
     footer {
-      padding: 28px clamp(18px, 5vw, 56px);
-      color: var(--muted);
-      background: var(--paper);
-      border-top: 1px solid var(--line);
-      font-size: 0.93rem;
+      padding: 28px 6%;
+      color: #4d5a67;
+      font-size: 18px;
+      text-align: center;
     }
 
-    @media (max-width: 900px) {
-      .hero, .contact {
-        grid-template-columns: 1fr;
+    @media (max-width: 850px) {
+      body {
+        font-size: 19px;
       }
 
-      .features, .property-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .section-heading {
-        display: block;
-      }
-
-      .section-heading p {
-        margin-top: 12px;
-      }
-    }
-
-    @media (max-width: 620px) {
-      .topbar {
+      .top {
         position: static;
-        align-items: flex-start;
-        flex-direction: column;
       }
 
-      .nav-links {
-        width: 100%;
-        justify-content: space-between;
+      .info-strip {
+        grid-template-columns: 1fr;
       }
 
-      .nav-links a:not(.button) {
-        display: none;
+      .listing {
+        grid-template-columns: 1fr;
+      }
+
+      .listing img {
+        min-height: 280px;
       }
 
       .button {
         width: 100%;
       }
-
-      .hero-actions .button,
-      .nav-links .button {
-        width: auto;
-      }
     }
   </style>
 </head>
 <body>
-  <header class="topbar">
+  <header class="top">
     <div class="brand">New Castle PA Rentals</div>
-    <nav class="nav-links" aria-label="Main navigation">
-      <a href="#rentals">Rentals</a>
-      <a href="#contact">Contact</a>
-      <a class="button" href="tel:5163137299">Call 516-313-7299</a>
-    </nav>
+    <a class="button" href="tel:5163137299">Call or Text 516-313-7299</a>
   </header>
 
   <main>
     <section class="hero">
-      <div>
-        <p class="eyebrow">Pet-friendly rentals in New Castle, Pennsylvania</p>
-        <h1>Rent from responsive local property management.</h1>
-        <p class="lead">Tour available homes, get quick answers, and reach a real person any time. Pets are welcome with no added pet fees.</p>
+      <div class="hero-inner">
+        <p class="small-title">Homes for rent in New Castle, PA</p>
+        <h1>Simple rentals. Clear prices. Real help.</h1>
+        <p>We have pet-friendly homes for rent in New Castle. There are no extra pet fees. Call or text and a real person will answer.</p>
         <div class="hero-actions">
-          <a class="button" href="tel:5163137299">Call or text now</a>
-          <a class="button secondary" href="#rentals">View rentals</a>
+          <a class="button" href="#rentals">See Rentals</a>
+          <a class="button" href="sms:5163137299">Text Us Now</a>
         </div>
-      </div>
-
-      <aside class="quick-card" aria-label="Rental benefits">
-        <h2>Why renters choose us</h2>
-        <ul class="checks">
-          <li><span class="checkmark">✓</span><span><strong>No added pet fees.</strong> Bring your pet without surprise monthly charges.</span></li>
-          <li><span class="checkmark">✓</span><span><strong>Real 24/7 support.</strong> Call or text and reach a human when you need help.</span></li>
-          <li><span class="checkmark">✓</span><span><strong>Homes with space.</strong> Larger rentals with practical features like garages, yards, balconies, and laundry.</span></li>
-        </ul>
-      </aside>
-    </section>
-
-    <section class="features" aria-label="Service highlights">
-      <div class="feature">
-        <h3>Pet-friendly</h3>
-        <p>Pets are welcome at no additional pet fee across available rentals.</p>
-      </div>
-      <div class="feature">
-        <h3>Fast communication</h3>
-        <p>Call or text directly instead of waiting on a slow ticket system.</p>
-      </div>
-      <div class="feature">
-        <h3>New Castle homes</h3>
-        <p>Available rental houses in New Castle with room for everyday life.</p>
       </div>
     </section>
 
-    <section id="rentals" class="listings">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Available rentals</p>
-          <h2>Homes ready to view</h2>
-        </div>
-        <p>See a home you like? Call or text for the fastest response, or open the Zillow listing for more photos and details.</p>
+    <section class="info-strip" aria-label="Rental benefits">
+      <div class="info-box">
+        <strong>Pets are welcome</strong>
+        <span>No extra pet fees.</span>
+      </div>
+      <div class="info-box">
+        <strong>Fast answers</strong>
+        <span>Call or text a real person.</span>
+      </div>
+      <div class="info-box">
+        <strong>Easy to tour</strong>
+        <span>Ask about showings and move-in dates.</span>
+      </div>
+    </section>
+
+    <section id="rentals" class="section">
+      <div class="section-header">
+        <p class="small-title">Available now</p>
+        <h2>Homes for rent</h2>
+        <p>Click “View on Zillow” to see more photos and details. Call or text for the fastest answer.</p>
       </div>
 
-      <div class="property-grid">
-        <article class="property-card">
-          <img src="IMG_0438.jpeg" alt="29 W Miller St rental in New Castle, PA">
-          <div class="property-body">
-            <h3>29 W Miller St<br>New Castle, PA 16102</h3>
-            <div class="rent-price">$1,100<span>/mo</span></div>
-            <div class="tag-row" aria-label="Property features">
-              <span class="tag">2 bed</span>
-              <span class="tag">1 bath</span>
-              <span class="tag">Massive garage</span>
-              <span class="tag">Available now</span>
-            </div>
-            <p>Available immediately with a massive garage and practical everyday space.</p>
-            <a class="zillow-link" href="https://www.zillow.com/b/29-w-miller-st-new-castle-pa-9PRpDq/" target="_blank" rel="noopener">View on Zillow</a>
-          </div>
-        </article>
-
-        <article class="property-card">
-          <img src="IMG_0234.jpeg" alt="613 Countyline St Unit 1 rental in New Castle, PA">
-          <div class="property-body">
-            <h3>613 Countyline St, Unit 1<br>New Castle, PA 16101</h3>
-            <div class="rent-price">$900<span>/mo</span></div>
-            <div class="tag-row" aria-label="Property features">
-              <span class="tag">Unit 1</span>
-              <span class="tag">Available rental</span>
-              <span class="tag">Pet-friendly</span>
-              <span class="tag">No pet fee</span>
-            </div>
-            <p>Clean, straightforward rental option at a strong monthly price. Call or text for current availability and showing times.</p>
-            <a class="zillow-link" href="https://www.zillow.com/homedetails/613-Countyline-St-UNIT-1-New-Castle-PA-16101/452273130_zpid/" target="_blank" rel="noopener">View on Zillow</a>
-          </div>
-        </article>
-
-        <article class="property-card">
-          <img src="IMG_0708.jpeg" alt="413 Bartram Ave rental in New Castle, PA">
-          <div class="property-body">
+      <div class="listings">
+        <article class="listing">
+          <img src="IMG_1828.jpeg" alt="413 Bartram Ave house exterior">
+          <div class="listing-content">
             <h3>413 Bartram Ave<br>New Castle, PA 16101</h3>
-            <div class="rent-price">$1,500<span>/mo</span></div>
-            <div class="tag-row" aria-label="Property features">
-              <span class="tag">5 bed</span>
-              <span class="tag">1 bath</span>
-              <span class="tag">Central air</span>
-              <span class="tag">Pets OK</span>
-            </div>
-            <p>Gorgeous, massive 5-bedroom house with laundry hookups, off-street parking, and pets welcome for free.</p>
-            <a class="zillow-link" href="https://www.zillow.com/homedetails/413-Bartram-Ave-New-Castle-PA-16101/93630034_zpid/" target="_blank" rel="noopener">View on Zillow</a>
+            <div class="price">$1,500 <span>per month</span></div>
+            <ul class="tags">
+              <li>5 bedrooms</li>
+              <li>1 bathroom</li>
+              <li>Central air</li>
+              <li>Pets OK</li>
+            </ul>
+            <p>Large 5-bedroom home with space to spread out. Pets are welcome with no extra pet fee.</p>
+            <a class="button" href="https://www.zillow.com/homedetails/413-Bartram-Ave-New-Castle-PA-16101/93630034_zpid/" target="_blank" rel="noopener">View on Zillow</a>
+          </div>
+        </article>
+
+        <article class="listing">
+          <img src="1.jpeg" alt="613 Countyline St Unit 1 exterior">
+          <div class="listing-content">
+            <h3>613 Countyline St, Unit 1<br>New Castle, PA 16101</h3>
+            <div class="price">$900 <span>per month</span></div>
+            <ul class="tags">
+              <li>Unit 1</li>
+              <li>Good price</li>
+              <li>Pets OK</li>
+              <li>No pet fee</li>
+            </ul>
+            <p>A simple rental at a lower monthly price. Call or text to ask about showings and move-in timing.</p>
+            <a class="button" href="https://www.zillow.com/homedetails/613-Countyline-St-UNIT-1-New-Castle-PA-16101/452273130_zpid/" target="_blank" rel="noopener">View on Zillow</a>
+          </div>
+        </article>
+
+        <article class="listing">
+          <img src="IMG_1652.jpeg" alt="29 W Miller St yard and garage">
+          <div class="listing-content">
+            <h3>29 W Miller St<br>New Castle, PA 16102</h3>
+            <div class="price">$1,100 <span>per month</span></div>
+            <ul class="tags">
+              <li>2 bedrooms</li>
+              <li>1 bathroom</li>
+              <li>Massive garage</li>
+              <li>Available now</li>
+            </ul>
+            <p>Available right away. This home has a huge garage and useful outdoor space.</p>
+            <a class="button" href="https://www.zillow.com/b/29-w-miller-st-new-castle-pa-9PRpDq/" target="_blank" rel="noopener">View on Zillow</a>
           </div>
         </article>
       </div>
     </section>
 
-    <section id="contact" class="contact">
-      <div>
-        <p class="eyebrow">Contact</p>
-        <h2>Call, text, or email to schedule a showing.</h2>
-        <p class="lead">A real person will answer. Ask about availability, application steps, and move-in timing.</p>
-      </div>
-
-      <div class="contact-panel">
-        <p>Fastest way to reach us:</p>
-        <div class="contact-list">
-          <a href="tel:5163137299">516-313-7299</a>
-          <a href="sms:5163137299">Text 516-313-7299</a>
-          <a href="mailto:newcastleparentals@gmail.com">newcastleparentals@gmail.com</a>
+    <section class="section contact">
+      <div class="contact-card">
+        <p class="small-title">Contact us</p>
+        <h2>Want to see a home?</h2>
+        <p>Call, text, or email. A real person will answer.</p>
+        <div class="contact-links">
+          <a href="tel:5163137299">Call: 516-313-7299</a>
+          <a href="sms:5163137299">Text: 516-313-7299</a>
+          <a href="mailto:newcastleparentals@gmail.com">Email: newcastleparentals@gmail.com</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <span>New Castle PA Rentals</span> - Pet-friendly rentals with real 24/7 customer service.
+    New Castle PA Rentals. Pet-friendly homes with no extra pet fees.
   </footer>
 </body>
 </html>
