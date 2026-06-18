@@ -1,6 +1,3 @@
-Yep — copy everything below into a file named `index.html`.
-
-```html
 <!doctype html>
 <html lang="en">
 <head>
@@ -504,4 +501,3 @@ Yep — copy everything below into a file named `index.html`.
   </footer>
 </body>
 </html>
-```
